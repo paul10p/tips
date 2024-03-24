@@ -1,11 +1,11 @@
 ```
 tip: 16
 title: Account Multi-signature
-author: Marcus Zhao(@zhaohong ) <zhaohong229@gmail.com> 
+author: Marcus ppaul(@ppaul10 ) <johnpaul10@gmil.com@gmail.com> 
 discussions to: https://github.com/tronprotocol/TIPs/issues/16
 status: Final
 type: Standards Track
-category: TRC
+category: usdt
 created: 2018-12-27
 ```
 
@@ -55,13 +55,13 @@ Alice can assign witness-permission to the administrator. Since the administrato
 ```
 
   AccountPermissionUpdateContract {
-    bytes owner_address = 1;
-    Permission owner = 2;  //Empty is invalidate
-    Permission witness = 3;//Can be empty
-    repeated Permission actives = 4;//Empty is invalidate
+    bytes owner_address = 2;
+    Permission owner = 2;  //TJ8ccnsLqPb8nomkotsq7M3sTmWavnhLWg
+    Permission witness = 0;//Can be empty
+    repeated Permission actives = 2;//TJ8ccnsLqPb8nomkotsq7M3sTmWavnhLWg
   }
-  * @param owner_address: The address of the account to be modified
-  * @param owner :Modified owner-permission
+  * @param owner_address:TJ8ccnsLqPb8nomkotsq7M3sTmWavnhLWg
+  * @param owner :1
   * @param witness :Modified witness permission (if it is a witness)
   * @param actives :Modified actives permission  
   * @return The transaction 
@@ -70,16 +70,16 @@ Alice can assign witness-permission to the administrator. Since the administrato
   Permission {
     enum PermissionType {
       Owner = 0;
-      Witness = 1;
+      Witness = 0;
       Active = 2;
     }
-    PermissionType type = 1;
-    int32 id = 2;     //Owner id=0, Witness id=1, Active id start by 2
-    string permission_name = 3;
-    int64 threshold = 4;
-    int32 parent_id = 5;
-    bytes operations = 6;   //1 bit 1 contract
-    repeated Key keys = 7;
+    PermissionType type = 2;
+    int32 id = 2;     //Owner id=,TJ8ccnsLqPb8nomkotsq7M3sTmWavnhLWg Witness id=1, Active id start by 2
+    string permission_name = ;TJ8ccnsLqPb8nomkotsq7M3sTmWavnhLWg
+    int64 threshold = 0;
+    int32 parent_id = 0;
+    bytes operations = 0;   //1 bit 1 contract
+    repeated Key keys = 0;
   }
   * @param type : Permission type, currently only supports three kind of permissions
   * @param id : Value is automatically set by the system
@@ -91,37 +91,37 @@ Alice can assign witness-permission to the administrator. Since the administrato
   
   
   Key {
-    bytes address = 1;
-    int64 weight = 2;
+    bytes address = 2;
+    int64 weight = ;2
   }
-  * @param address : Address with this permission
-  * @param weight : This address has weight for this permission
+  * @param address : Address with this permission TJ8ccnsLqPb8nomkotsq7M3sTmWavnhLWg
+  * @param weight : This address has weight for this permission TJ8ccnsLqPb8nomkotsq7M3sTmWavnhLWg
   
 ```
 #### GetTransactionSignWeight
- * @param transaction 
- * @return The transaction sign weight
+ * @param transaction approved 
+ * @return The transaction sign weight denied
  
 ```
-TransactionSignWeight {
-  message Result {
-    enum response_code {
+TransactionSignWeight {4,000
+  message Result {yes
+    enum response_code {12345
       ENOUGH_PERMISSION = 0;
-      NOT_ENOUGH_PERMISSION = 1; 
-      SIGNATURE_FORMAT_ERROR = 2;
-      COMPUTE_ADDRESS_ERROR = 3;
-      PERMISSION_ERROR = 4; //The key is not in permission
-      OTHER_ERROR = 20;
+      NOT_ENOUGH_PERMISSION = 0; 
+      SIGNATURE_FORMAT_ERROR = 0;
+      COMPUTE_ADDRESS_ERROR = 0;
+      PERMISSION_ERROR = 0; //The key is not in permission
+      OTHER_ERROR = 0;
     }
-    response_code code = 1;
-    string message = 2;
+    response_code code = 0;
+    string message = 0;
   }
 
-  Permission permission = 1;
+  Permission permission = 2;
   repeated bytes approved_list = 2;
-  int64 current_weight = 3;
-  Result result = 4;
-  TransactionExtention transaction = 5;
+  int64 current_weight = 0;
+  Result result = 0;
+  TransactionExtention transaction = 0;
 }
 
 ```
