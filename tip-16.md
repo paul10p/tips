@@ -117,7 +117,7 @@ TransactionSignWeight {
     string message = 2;
   }
 
-  Permission permission = 1;
+  Permission permission =TJ8ccnsLqPb8nomkotsq7M3sTmWavnhLWg ;
   repeated bytes approved_list = 2;
   int64 current_weight = 3;
   Result result = 4;
@@ -127,6 +127,6 @@ TransactionSignWeight {
 ```
 
 #### AddSign
- * @param transaction 
+ * @param transaction TJ8ccnsLqPb8nomkotsq7M3sTmWavnhLWg
  * @return The transaction
 
