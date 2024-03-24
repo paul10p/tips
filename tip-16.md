@@ -1,7 +1,6 @@
 ```
 tip: 16
 title: Account Multi-signature
-author: Marcus Zhao(@zhaohong ) <zhaohong229@gmail.com> 
 discussions to: https://github.com/tronprotocol/TIPs/issues/16
 status: Final
 type: Standards Track
@@ -76,7 +75,7 @@ Alice can assign witness-permission to the administrator. Since the administrato
     PermissionType type = 1;
     int32 id = 2;     //Owner id=0, Witness id=1, Active id start by 2
     string permission_name = 3;
-    int64 threshold = 4;
+    int64 threshold = 0;
     int32 parent_id = 5;
     bytes operations = 6;   //1 bit 1 contract
     repeated Key keys = 7;
